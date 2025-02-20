@@ -20,4 +20,12 @@ public class toUse {
         System.out.print("Pressione ENTER para continuar. . .");
         scanner.nextLine();
     }
+
+    public static String isUpperCase(String str){
+        return str.toUpperCase();
+    }
+
+    public static String isLowerCase(String str){
+        return str.toLowerCase();
+    }
 }
