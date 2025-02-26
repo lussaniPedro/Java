@@ -4,7 +4,7 @@ public class infinityCoffee {
         Coffee coffee = new Coffee();
         coffee.setFull(true);
 
-        toUse.clear();
+        Util.clear();
         while(true){
             if(coffee.getFull()){
                 coffee.setFull(coffee.drink());
@@ -16,7 +16,7 @@ public class infinityCoffee {
 }
 
 class Coffee {
-    private boolean full;
+    private boolean full = true;
 
     public boolean getFull(){
         return full;
@@ -27,28 +27,40 @@ class Coffee {
     }
 
     public boolean drink(){
+        if(!this.full){
+            System.out.println("Empty");
+            Util.sleep(500);
+            return refill();
+        }
+        
         System.out.print("Drinking");
-
+        
         for(int i = 0; i < 3; i++){
             System.out.print(".");
-            toUse.sleep(500);            
+            Util.sleep(500);            
         }
         
         System.out.println("\nEmpty");
-        toUse.sleep(500);            
+        Util.sleep(500);
         return false;
     }
     
     public boolean refill(){
+        if(this.full){
+            System.out.println("Full");
+            Util.sleep(500);
+            return drink();
+        }
+
         System.out.print("Refilling");
         
         for(int i = 0; i < 3; i++){
             System.out.print(".");
-            toUse.sleep(500);            
+            Util.sleep(500);
         }
-        
+
         System.out.println("\nFull");
-        toUse.sleep(500);            
+        Util.sleep(500);
         return true;
     }
 }

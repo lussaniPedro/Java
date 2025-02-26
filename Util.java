@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class toUse {
+public class Util {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void clear(){

@@ -8,30 +8,39 @@ public class calculator {
 
         do{
             clear();
-            System.out.println("-- Calculator --");
-            System.out.print("Enter the first number: ");
+            System.out.println("-- Simple calculator --\n");
+
+            System.out.print("Type the first number: ");
             number1 = scanner.nextFloat();
-            
-            System.out.print("Enter the operator (+, -, *, /): ");
+
+            System.out.print("Type the operator (+, -, *, /): ");
             operator = scanner.next().charAt(0);
-            
-            System.out.print("Enter the second number: ");
+
+            System.out.print("Type the second number: ");
             number2 = scanner.nextFloat();
 
             if(operator != '+' && operator != '-' && operator != '*'&& operator != '/'){
                 System.out.println("ERROR: Invalid operator!!!");
             }
-        } while(operator != '+' && operator != '-' && operator != '*'&& operator != '/');
+        } while(operator != '+' && operator != '-' && operator != '*' && operator != '/');
 
         float result = 0;
         switch(operator){
             case '+': result = addition(number1, number2); break;
             case '-': result = subtraction(number1, number2); break;
             case '*': result = multiplication(number1, number2); break;
-            case '/': result = division(number1, number2); break;
+            case '/':
+                if(number2 == 0) {
+                    scanner.close();
+                    System.out.print("ERROR: Invalid division!!!");
+                    System.exit(1);
+                }
+ 
+                result = division(number1, number2); break;
         }
 
-        System.out.println(number1 + " " + operator + " " + number2 + " is: " + result);
+        System.out.println();
+        System.out.println(number1 + " " + operator + " " + number2 + " = " + result + '\n');
 
         scanner.close();
     }
