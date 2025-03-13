@@ -32,19 +32,19 @@ class Coffee {
             Util.sleep(500);
             return refill();
         }
-        
+
         System.out.print("Drinking");
-        
+
         for(int i = 0; i < 3; i++){
             System.out.print(".");
-            Util.sleep(500);            
+            Util.sleep(500);
         }
-        
+
         System.out.println("\nEmpty");
         Util.sleep(500);
         return false;
     }
-    
+
     public boolean refill(){
         if(this.full){
             System.out.println("Full");
@@ -53,7 +53,7 @@ class Coffee {
         }
 
         System.out.print("Refilling");
-        
+
         for(int i = 0; i < 3; i++){
             System.out.print(".");
             Util.sleep(500);
