@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
 public class Util {
-    public static Scanner scanner = new Scanner(System.in);
+    public static Scanner scan = new Scanner(System.in);
 
     public static void clear(){
-        System.out.print("\033[H\033[2J");  
+        System.out.print("\033[H\033[2J");
         System.out.flush();
     }
 
@@ -18,7 +18,7 @@ public class Util {
 
     public static void pause(){
         System.out.print("Pressione ENTER para continuar. . .");
-        scanner.nextLine();
+        scan.nextLine();
     }
 
     public static String isUpperCase(String str){
