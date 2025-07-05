@@ -357,12 +357,6 @@ public class SystemEmail {
             }
 
             int index = -1;
-            char opSn = 's';
-            while(YesOrNo(opSn)){
-                System.out.print("Deseja adicionar CC (S/N)?: ");
-                
-
-            }
 
             if(index > -1){
                 break;
@@ -496,14 +490,14 @@ public class SystemEmail {
         return true;
     }
 
-    private static boolean YesOrNo(char input){
+    /* private static boolean YesOrNo(char input){
         if(input == 's' || input == 'S') return true;
         if(input == 'n' || input == 'N') return false;
 
         System.out.println("\nERRO: Opcao invalida!!!\n");
         return true;
     }
-
+ */
     private static boolean isDigitString(String str){
         for(int i = 0; i < str.length(); i++){
             if(!Character.isDigit(str.charAt(i))){
